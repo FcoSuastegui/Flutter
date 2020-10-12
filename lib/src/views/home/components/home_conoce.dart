@@ -35,7 +35,6 @@ class HomeConoce extends StatelessWidget {
             DefaultCard(
               text: 'Validar',
               icon: Icons.qr_code_rounded,
-              iconColor: Colors.grey,
               onPress: () async {
                 final ResponseModel response =
                     await QrController().scanCamara();
@@ -55,10 +54,96 @@ class HomeConoce extends StatelessWidget {
               text: 'Registro',
               icon: Icons.add_circle,
               right: 0.0,
+              onPress: openOptions,
             )
           ],
         ),
       ],
+    );
+  }
+
+  Future<void> openOptions() async {
+    await Get.dialog(
+      Center(
+        child: SizedBox(
+          height: 250,
+          child: Dialog(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    "Selecciona el método de registro",
+                    style: TextStyle(fontSize: 14.0, color: Colors.grey),
+                  ),
+                  Divider(),
+                  GestureDetector(
+                    behavior: HitTestBehavior.translucent,
+                    onTap: () {
+                      Get.back();
+                      Get.toNamed('/registro-peatonal');
+                    },
+                    child: Container(
+                      width: Get.width,
+                      height: 50.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Icon(
+                            Icons.directions_walk,
+                            color: AppTheme.kPrimaryColor,
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Text(
+                            "Registro Peatonal",
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.grey,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Divider(),
+                  GestureDetector(
+                    behavior: HitTestBehavior.translucent,
+                    onTap: () {
+                      Get.back();
+                      Get.toNamed('/registro-vehiculo');
+                    },
+                    child: Container(
+                      width: Get.width,
+                      height: 50.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Icon(
+                            Icons.electric_car,
+                            color: AppTheme.kPrimaryColor,
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Text(
+                            "Registro Vehiculo",
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.grey,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

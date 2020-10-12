@@ -1,3 +1,6 @@
+import 'package:PipoVigilante/src/views/acceso/acceso_peatonal_view.dart';
+import 'package:PipoVigilante/src/views/acceso/acceso_vehiculo_view.dart';
+import 'package:PipoVigilante/src/views/acceso/bindings/acceso_binding.dart';
 import 'package:PipoVigilante/src/views/notifications/notification_content_view.dart';
 import 'package:PipoVigilante/src/views/qr/qr_validation_view.dart';
 import 'package:get/get.dart';
@@ -19,6 +22,16 @@ class Routes {
     GetPage(
       name: NotificationContentView.routeName,
       page: () => NotificationContentView(),
+    ),
+    GetPage(
+      name: AccesoPeatonalView.routeName,
+      page: () => AccesoPeatonalView(),
+      binding: AccesoBinding(),
+    ),
+    GetPage(
+      name: AccesoVehiculoView.routeName,
+      page: () => AccesoVehiculoView(),
+      binding: AccesoBinding(),
     ),
     GetPage(
       name: QrValidationView.routeName,

@@ -1,10 +1,10 @@
+import 'package:PipoVigilante/src/widgets/buttons/button_rectangle_submit.dart';
+import 'package:PipoVigilante/src/widgets/fields/deafult_text_field_rectangle_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:PipoVigilante/src/themes/size_config.dart';
 import 'package:PipoVigilante/src/views/forgot_password/bloc/forgot_password_bloc.dart';
-import 'package:PipoVigilante/src/widgets/buttons/button_submit.dart';
 import 'package:PipoVigilante/src/widgets/loading/loading.dart';
-import 'package:PipoVigilante/src/widgets/textform/default_text_field_bloc.dart';
 
 class ForgotPassWordForm extends StatelessWidget {
   @override
@@ -24,8 +24,7 @@ class ForgotPassWordForm extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                DefaultTextFieldBloc(
-                  labelText: 'Correo electónico',
+                DefaultTextFieldRectangleBloc(
                   hintText: 'Ingresa tu correo electrónico',
                   textFieldBloc: forgot.email,
                   keyboardType: TextInputType.emailAddress,
@@ -33,7 +32,7 @@ class ForgotPassWordForm extends StatelessWidget {
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.1,
                 ),
-                ButtonSubmit(
+                ButtonRectangleSubmit(
                   submit: forgot.submit,
                   text: 'Continue',
                 ),

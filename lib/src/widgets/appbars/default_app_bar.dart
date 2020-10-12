@@ -23,7 +23,7 @@ class DefaultAppBar extends PreferredSize {
 
   @override
   Size get preferredSize =>
-      Size.fromHeight(AppBar().preferredSize.height * height);
+      Size.fromHeight(AppBar().preferredSize.height / height);
   @override
   Widget build(BuildContext context) {
     return GradientAppBar(

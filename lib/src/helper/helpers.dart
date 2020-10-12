@@ -69,3 +69,9 @@ extension RandomInt on int {
     return min + _random.nextInt(max - min);
   }
 }
+
+extension BoolParsing on String {
+  bool parseBool() {
+    return this.toLowerCase() == 'true';
+  }
+}

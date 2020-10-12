@@ -1,4 +1,3 @@
-import 'package:PipoVigilante/src/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
@@ -13,7 +12,7 @@ class DefaultTextFieldBloc extends StatelessWidget {
   final List<TextInputFormatter> inputFormatters;
   final Function onSubmitted;
   final TextStyle labelStyle, style;
-  final int maxLength;
+  final int maxLength, maxLines;
   final bool maxLengthEnforced;
 
   DefaultTextFieldBloc({
@@ -33,6 +32,7 @@ class DefaultTextFieldBloc extends StatelessWidget {
     this.suffix,
     this.counterText,
     this.prefixIcon,
+    this.maxLines = 1,
   }) : super(key: key);
 
   @override
@@ -44,21 +44,24 @@ class DefaultTextFieldBloc extends StatelessWidget {
       keyboardType: keyboardType,
       suffixButton: suffixButton,
       maxLength: maxLength,
+      maxLines: maxLines,
       maxLengthEnforced: maxLengthEnforced,
       inputFormatters: inputFormatters,
+      padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
       decoration: InputDecoration(
         counterText: counterText,
         suffix: suffix,
         prefixIcon: prefixIcon,
+        contentPadding: EdgeInsets.all(10.0),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: AppTheme.kPrimaryColor,
+            color: Colors.grey,
           ),
         ),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: AppTheme.kPrimaryColor,
+            color: Colors.grey,
           ),
         ),
         labelText: labelText,

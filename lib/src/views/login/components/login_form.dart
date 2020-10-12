@@ -1,11 +1,11 @@
+import 'package:PipoVigilante/src/widgets/buttons/button_rectangle_submit.dart';
+import 'package:PipoVigilante/src/widgets/fields/deafult_text_field_rectangle_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:get/get.dart';
 import 'package:PipoVigilante/src/themes/size_config.dart';
 import 'package:PipoVigilante/src/views/login/bloc/login_bloc.dart';
-import 'package:PipoVigilante/src/widgets/buttons/button_submit.dart';
 import 'package:PipoVigilante/src/widgets/loading/loading.dart';
-import 'package:PipoVigilante/src/widgets/textform/default_text_field_bloc.dart';
 
 class LoginForm extends StatelessWidget {
   @override
@@ -30,14 +30,15 @@ class LoginForm extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  DefaultTextFieldBloc(
-                    labelText: 'usuario',
+                  DefaultTextFieldRectangleBloc(
                     hintText: 'Ingresa tu correo',
                     textFieldBloc: login.username,
                     keyboardType: TextInputType.emailAddress,
                   ),
-                  DefaultTextFieldBloc(
-                    labelText: 'Contraseña',
+                  SizedBox(
+                    height: getProportionateScreenHeight(20.0),
+                  ),
+                  DefaultTextFieldRectangleBloc(
                     hintText: 'Ingresa tu contraseña',
                     textFieldBloc: login.password,
                     keyboardType: TextInputType.emailAddress,
@@ -55,7 +56,8 @@ class LoginForm extends StatelessWidget {
                         onTap: () => Get.toNamed('/forgot'),
                         child: Text(
                           "Recuperar contraseña",
-                          style: TextStyle(decoration: TextDecoration.underline),
+                          style:
+                              TextStyle(decoration: TextDecoration.underline),
                         ),
                       ),
                     ],
@@ -63,7 +65,7 @@ class LoginForm extends StatelessWidget {
                   SizedBox(
                     height: getProportionateScreenHeight(20.0),
                   ),
-                  ButtonSubmit(
+                  ButtonRectangleSubmit(
                     submit: login.submit,
                     text: 'Continuar',
                   ),

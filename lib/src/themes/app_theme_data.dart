@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:PipoVigilante/src/themes/app_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppThemeData {
   static final ThemeData themeData = ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    fontFamily: 'Muli',
     appBarTheme: AppBarTheme(
       color: Colors.white,
       elevation: 0.0,
@@ -12,18 +12,12 @@ class AppThemeData {
       iconTheme: IconThemeData(
         color: Colors.white,
       ),
-      textTheme: TextTheme(
-        headline6: TextStyle(
-          color: Color(0xFF8B8B8B),
-          fontSize: 20.0,
-        ),
-      ),
+      textTheme: GoogleFonts.quicksandTextTheme(),
     ),
     canvasColor: AppTheme.kGreenBackground,
-    textTheme: TextTheme(
-      bodyText1: TextStyle(color: AppTheme.kTextColor),
-      bodyText2: TextStyle(color: AppTheme.kTextColor),
-    ),
+    textTheme: GoogleFonts.quicksandTextTheme(),
+    unselectedWidgetColor: AppTheme.kPrimaryColor,
+    toggleableActiveColor:  AppTheme.kPrimaryColor,
     primaryColor: AppTheme.kPrimaryColor,
     backgroundColor: AppTheme.kPrimaryColor,
     primarySwatch: Colors.blue,
