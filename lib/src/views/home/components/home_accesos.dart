@@ -1,6 +1,7 @@
 import 'package:PipoVigilante/src/widgets/listtile/default_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:PipoVigilante/src/themes/app_theme.dart';
+import 'package:get/get.dart';
 
 class HomeAccesos extends StatelessWidget {
   const HomeAccesos({Key key}) : super(key: key);
@@ -23,6 +24,7 @@ class HomeAccesos extends StatelessWidget {
           top: 10.0,
           bottom: 10.0,
           trailing: Icons.book,
+          onPress: () => Get.toNamed('/bitacora'),
         ),
         DefaultListTile(
           text: 'Control',

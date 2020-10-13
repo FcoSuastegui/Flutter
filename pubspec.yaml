@@ -41,6 +41,7 @@ dependencies:
   google_fonts: ^1.1.0
 
   image_picker: ^0.6.7+11
+  timeline_tile: ^1.0.0
 
 dev_dependencies:
   flutter_test:

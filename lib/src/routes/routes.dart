@@ -1,9 +1,10 @@
+import 'package:get/get.dart';
 import 'package:PipoVigilante/src/views/acceso/acceso_peatonal_view.dart';
 import 'package:PipoVigilante/src/views/acceso/acceso_vehiculo_view.dart';
 import 'package:PipoVigilante/src/views/acceso/bindings/acceso_binding.dart';
+import 'package:PipoVigilante/src/views/bitacora/bitacora_view.dart';
 import 'package:PipoVigilante/src/views/notifications/notification_content_view.dart';
 import 'package:PipoVigilante/src/views/qr/qr_validation_view.dart';
-import 'package:get/get.dart';
 import 'package:PipoVigilante/src/views/bottom_navigator_bar/bindings/bottom_navigator_bar_binding.dart';
 import 'package:PipoVigilante/src/views/bottom_navigator_bar/bottom_navigator_bar_view.dart';
 import 'package:PipoVigilante/src/views/forgot_password/forgot_password_view.dart';
@@ -27,6 +28,10 @@ class Routes {
       name: AccesoPeatonalView.routeName,
       page: () => AccesoPeatonalView(),
       binding: AccesoBinding(),
+    ),
+    GetPage(
+      name: BitacoraView.routeName,
+      page: () => BitacoraView(),
     ),
     GetPage(
       name: AccesoVehiculoView.routeName,
