@@ -1,62 +1,137 @@
 import 'package:PipoVigilante/src/views/bitacora/components/bitacora_icon_indicator.dart';
 import 'package:PipoVigilante/src/views/bitacora/components/bitacora_time_line.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BitacoraBody extends StatelessWidget {
   const BitacoraBody({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: Theme.of(context).copyWith(
-        accentColor: Colors.black
-      ),
-      child: ListView(
-        children: <Widget>[
-          BitacoraTimeLine(
-            indicator: const BitacoraIconIndicator(
-              iconData: Icons.home,
-              size: 20,
-            ),
-            time: '18:00',
-            weather: 'Cloudy',
-            temperature: '26°C',
-            phrase: 'A beautiful afternoon to take a walk into the park.'
-                " Don't forget to take your water.",
+    return ListView(
+      children: <Widget>[
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_car,
+            size: 20,
           ),
-          BitacoraTimeLine(
-            indicator: const BitacoraIconIndicator(
-              iconData: Icons.home,
-              size: 20,
-            ),
-            time: '20:00',
-            weather: 'Sunset',
-            temperature: '24°C',
-            phrase: 'Enjoy the view, the sun will be back tomorrow.',
+          time: '12/10/2020',
+          title: 'Acceso 104',
+          subtitle: '10:00 am',
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.local_shipping_outlined,
+            size: 20,
           ),
-          BitacoraTimeLine(
-            indicator: const BitacoraIconIndicator(
-              iconData: Icons.home,
-              size: 20,
-            ),
-            time: '22:00',
-            weather: 'Fall of rain',
-            temperature: '18°C',
-            phrase: 'Temperature is decreasing...',
+          time: '12/10/2020',
+          title: 'Acceso proveedor',
+          subtitle: '11:00 am',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_car,
+            size: 20,
           ),
-          BitacoraTimeLine(
-            indicator: const BitacoraIconIndicator(
-              iconData: Icons.home,
-              size: 20,
-            ),
-            time: '00:00',
-            weather: 'Chilly',
-            temperature: '16°C',
-            phrase: "Have a good night, don't forget your blanket.",
-            isLast: true,
+          time: '12/10/2020',
+          title: 'Acceso 104',
+          subtitle: '10:00 am',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_walk,
+            size: 20,
           ),
-        ],
-      ),
+          time: '12/10/2020',
+          title: 'Registro 106',
+          subtitle: '12:00 am',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_car,
+            size: 20,
+          ),
+          time: '12/10/2020',
+          title: 'Acceso 109',
+          subtitle: '02:00 pm',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_car,
+            size: 20,
+          ),
+          time: '13/10/2020',
+          title: 'Acceso 104',
+          subtitle: '10:00 am',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_walk,
+            size: 20,
+          ),
+          time: '13/10/2020',
+          title: 'Registro 106',
+          subtitle: '12:00 am',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_car,
+            size: 20,
+          ),
+          time: '13/10/2020',
+          title: 'Acceso 109',
+          subtitle: '02:00 pm',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_car,
+            size: 20,
+          ),
+          time: '14/10/2020',
+          title: 'Acceso 104',
+          subtitle: '10:00 am',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_walk,
+            size: 20,
+          ),
+          time: '14/10/2020',
+          title: 'Registro 106',
+          subtitle: '12:00 am',
+          description: "",
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+        BitacoraTimeLine(
+          indicator: const BitacoraIconIndicator(
+            iconData: Icons.directions_car,
+            size: 20,
+          ),
+          time: '14/10/2020',
+          title: 'Acceso 109',
+          subtitle: '02:00 pm',
+          description: "",
+          isLast: true,
+          onTap: () => Get.toNamed('/bitacora-details'),
+        ),
+      ],
     );
   }
 }

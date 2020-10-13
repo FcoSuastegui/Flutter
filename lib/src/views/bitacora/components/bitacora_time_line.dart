@@ -7,81 +7,90 @@ import 'package:timeline_tile/timeline_tile.dart';
 class BitacoraTimeLine extends StatelessWidget {
   final BitacoraIconIndicator indicator;
   final String time;
-  final String weather;
-  final String temperature;
-  final String phrase;
+  final String title;
+  final String subtitle;
+  final String description;
   final bool isLast;
+  final Function onTap;
 
   BitacoraTimeLine({
     Key key,
     this.indicator,
-    this.time,
-    this.weather,
-    this.temperature,
-    this.phrase,
+    @required this.time,
+    @required this.title,
+    this.subtitle,
+    this.description,
     this.isLast = false,
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TimelineTile(
       alignment: TimelineAlign.manual,
-      lineXY: 0.25,
+      lineXY: 0.4,
       beforeLineStyle: LineStyle(color: AppTheme.kPrimaryColor),
       indicatorStyle: IndicatorStyle(
         indicatorXY: 0.3,
         drawGap: true,
-        width: 30.0,
-        height: 35,
+        width: 50.0,
+        height: 35.0,
         indicator: indicator,
       ),
       isLast: isLast,
       startChild: Center(
         child: Container(
-          alignment: const Alignment(0.0, -0.50),
+          alignment: const Alignment(0.0, -0.80),
           child: Text(
-            time,
+            time ?? '',
             style: GoogleFonts.lato(
-              fontSize: 18,
+              fontSize: 15.0,
               color: Colors.black.withOpacity(0.6),
               fontWeight: FontWeight.w800,
             ),
           ),
         ),
       ),
-      endChild: Padding(
-        padding:
-            const EdgeInsets.only(left: 16, right: 10, top: 30, bottom: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              weather,
-              style: GoogleFonts.lato(
-                fontSize: 18,
-                color: Colors.black.withOpacity(0.8),
-                fontWeight: FontWeight.bold,
+      endChild: GestureDetector(
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 16.0,
+            right: 10.0,
+            top: 20.0,
+            bottom: 0.0,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                title ?? '',
+                style: GoogleFonts.lato(
+                  fontSize: 18,
+                  color: Colors.black.withOpacity(0.8),
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              temperature,
-              style: GoogleFonts.lato(
-                fontSize: 16,
-                color: Colors.black.withOpacity(0.8),
-                fontWeight: FontWeight.normal,
+              const SizedBox(height: 5.0),
+              Text(
+                subtitle ?? '',
+                style: GoogleFonts.lato(
+                  fontSize: 16,
+                  color: Colors.black.withOpacity(0.8),
+                  fontWeight: FontWeight.normal,
+                ),
               ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              phrase,
-              style: GoogleFonts.lato(
-                fontSize: 14,
-                color: Colors.black.withOpacity(0.6),
-                fontWeight: FontWeight.normal,
-              ),
-            )
-          ],
+              const SizedBox(height: 5.0),
+              Text(
+                description ?? '',
+                style: GoogleFonts.lato(
+                  fontSize: 14,
+                  color: Colors.black.withOpacity(0.6),
+                  fontWeight: FontWeight.normal,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

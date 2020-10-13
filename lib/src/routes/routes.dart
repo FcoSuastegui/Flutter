@@ -1,3 +1,4 @@
+import 'package:PipoVigilante/src/views/bitacora/bitacora_details_view.dart';
 import 'package:get/get.dart';
 import 'package:PipoVigilante/src/views/acceso/acceso_peatonal_view.dart';
 import 'package:PipoVigilante/src/views/acceso/acceso_vehiculo_view.dart';
@@ -32,6 +33,10 @@ class Routes {
     GetPage(
       name: BitacoraView.routeName,
       page: () => BitacoraView(),
+    ),
+    GetPage(
+      name: BitacoraDetailsView.routeName,
+      page: () => BitacoraDetailsView(),
     ),
     GetPage(
       name: AccesoVehiculoView.routeName,

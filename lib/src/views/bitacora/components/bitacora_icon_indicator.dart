@@ -16,7 +16,8 @@ class BitacoraIconIndicator extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(5.0),
             color: AppTheme.kPrimaryColor,
           ),
         ),
@@ -24,13 +25,9 @@ class BitacoraIconIndicator extends StatelessWidget {
           child: Align(
             alignment: Alignment.center,
             child: SizedBox(
-              height: 30,
-              width: 30,
-              child: Icon(
-                iconData,
-                size: size,
-                color: Colors.white
-              ),
+              height: 50.0,
+              width: 50.0,
+              child: Icon(iconData, size: size, color: Colors.white),
             ),
           ),
         ),
