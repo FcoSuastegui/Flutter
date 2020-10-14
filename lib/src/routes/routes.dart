@@ -1,4 +1,10 @@
 import 'package:PipoVigilante/src/views/bitacora/bitacora_details_view.dart';
+import 'package:PipoVigilante/src/views/control/bindings/control_binding.dart';
+import 'package:PipoVigilante/src/views/control/control_details_view.dart';
+import 'package:PipoVigilante/src/views/control/control_view.dart';
+import 'package:PipoVigilante/src/views/proveedores/binding/proveedor_binding.dart';
+import 'package:PipoVigilante/src/views/proveedores/proveedores_details_view.dart';
+import 'package:PipoVigilante/src/views/proveedores/proveedores_view.dart';
 import 'package:get/get.dart';
 import 'package:PipoVigilante/src/views/acceso/acceso_peatonal_view.dart';
 import 'package:PipoVigilante/src/views/acceso/acceso_vehiculo_view.dart';
@@ -37,6 +43,24 @@ class Routes {
     GetPage(
       name: BitacoraDetailsView.routeName,
       page: () => BitacoraDetailsView(),
+    ),
+    GetPage(
+      name: ControlView.routeName,
+      page: () => ControlView(),
+      binding: ControlBinding(),
+    ),
+    GetPage(
+      name: ControlDetailsView.routeName,
+      page: () => ControlDetailsView(),
+    ),
+    GetPage(
+      name: ProveedoresView.routeName,
+      page: () => ProveedoresView(),
+      binding: ProveedorBinding(),
+    ),
+    GetPage(
+      name: ProveedoresDetailsView.routeName,
+      page: () => ProveedoresDetailsView(),
     ),
     GetPage(
       name: AccesoVehiculoView.routeName,

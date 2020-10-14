@@ -1,7 +1,7 @@
-import 'package:PipoVigilante/src/data/models/bitacora_model.dart';
+//import 'package:PipoVigilante/src/data/models/bitacora_model.dart';
 
 class BicatoraService {
-  Map<String, dynamic> _bitacora = {
+  Map<String, dynamic> bitacora = {
     "bitacora": [
       {
         "title": "Pipo policia",

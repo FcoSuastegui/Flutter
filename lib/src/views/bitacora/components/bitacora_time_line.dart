@@ -52,6 +52,7 @@ class BitacoraTimeLine extends StatelessWidget {
         ),
       ),
       endChild: GestureDetector(
+        behavior: HitTestBehavior.translucent,
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.only(

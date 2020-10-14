@@ -30,11 +30,13 @@ class HomeAccesos extends StatelessWidget {
           text: 'Control',
           bottom: 10.0,
           trailing: Icons.pan_tool,
+          onPress: () => Get.toNamed('/control'),
         ),
         DefaultListTile(
           text: 'Proveedores',
           bottom: 10.0,
           trailing: Icons.local_shipping_outlined,
+          onPress: () => Get.toNamed('/proveedores'),
         ),
         DefaultListTile(
           text: 'Directorio',
